@@ -1,0 +1,4 @@
+# Archivos de compilación
+bin/
+obj/
+*.csproj
