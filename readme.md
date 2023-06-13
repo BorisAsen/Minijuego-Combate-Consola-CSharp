@@ -11,6 +11,7 @@ Al ejecutar el proyecto se observara por pantalla un menu con las opciones para:
 - Modificar personajes
 - Buscar personajes por cierto atributo
 - Ver el historial de peleas.
+
 En base a estas posibilidades se implementara principalmente la lectura de un archivo csv, creacion de objetos o listas de objetos, operaciones de listas, escritura de archivos csv y txt ya sea overwrite o append, entre otras cosas.
 
 ## Funcionalidades principales
