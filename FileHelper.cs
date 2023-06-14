@@ -5,8 +5,52 @@ using System.Globalization;
 
 namespace CSharp_Combat_Minigame
 {
+    
     public static class FileHelper
     {
+        public static void Versus(List<Character> characters)
+        {
+            Console.CursorVisible = false;
+
+            for (int i = 0; i < 6; i++)
+            {
+                Console.Clear();
+
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine("       (P1)                                            (P1)                     ");
+                    Console.WriteLine("      _____         __          __   _______           _____                 ");
+                    Console.WriteLine("     /     \\       \\ \\      / /  /   ____\\        /     \\                  ");
+                    Console.WriteLine("  \\_|    > <|_/     \\ \\    / /   |  |____      \\_|> <    |_/                ");
+                    Console.WriteLine("    |    )O(|         \\ \\  / /    \\____   \\      |)O(    |                       ");
+                    Console.WriteLine("     \\_____/          \\ \\/ /      ____|  |         \\_____/           ");
+                    Console.WriteLine("      _| |_             \\___/      /______/          _| |_            ");
+                }
+                else if (i % 2 == 1)
+                {
+                    Console.WriteLine("       (P1)        \\   \\    \\     /    /    /           (P1)                     ");
+                    Console.WriteLine("      _____         __          __   _______           _____                 ");
+                    Console.WriteLine("     /     \\    \\  \\ \\      / /  /   ____\\  /     /     \\                  ");
+                    Console.WriteLine("  \\_|    > <|_/     \\ \\    / /   |  |____      \\_|> <    |_/                ");
+                    Console.WriteLine("    |    )O(|         \\ \\  / /    \\____   \\      |)O(    |                       ");
+                    Console.WriteLine("     \\_____/       /  \\ \\/ /      ____|  |  \\      \\_____/           ");
+                    Console.WriteLine("      _| |_          /  \\___/      /______/  \\       _| |_            ");
+                } else
+                {
+                    Console.WriteLine("       (P1)                                            (P1)                     ");
+                    Console.WriteLine("      _____         __          __   _______           _____                 ");
+                    Console.WriteLine("     /     \\       \\ \\      / /  /   ____\\        /     \\                  ");
+                    Console.WriteLine("  \\_|    > <|_/     \\ \\    / /   |  |____      \\_|> <    |_/                ");
+                    Console.WriteLine("    |    )O(|         \\ \\  / /    \\____   \\      |)O(    |                       ");
+                    Console.WriteLine("     \\_____/          \\ \\/ /      ____|  |         \\_____/           ");
+                    Console.WriteLine("      _| |_             \\___/      /______/          _| |_            ");
+                }
+
+                Thread.Sleep(250); // Pause for 250 milliseconds to create animation effect
+            }
+
+            Console.CursorVisible = true;
+        }
         // Get characters from csv file
         public static void FromCsvToList(List<Character> characters, string fileName)
         {
