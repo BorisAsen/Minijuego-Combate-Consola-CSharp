@@ -2,7 +2,7 @@ id,nombreCompleto,clase,ataque,vida,probabilidadGolpeCritico
 1,Elfo del Bosque,Mago,146,1079,1.53
 2,Druida del Cielo,Luchador,135,1249,1.6
 3,Ogro de Hielo,Tanque,108,1360,1.75
-4,Enano de la Oscuridad,Mago,90,1141,2
+4,Enano de la Oscuridad,Mago,90,486.5856,2
 5,Guardian de las Ruinas,Tanque,91,1423,1.9
 6,Hechicero de la Niebla,Mago,123,1126,1.71
 7,Caballero de Fuego,Luchador,182,1251,1.53
@@ -11,3 +11,4 @@ id,nombreCompleto,clase,ataque,vida,probabilidadGolpeCritico
 10,Elfo de la Aurora,Mago,131,1197,1.8
 11,Esteban Quito ,Mago,156,1230,1.4
 12,Boris Asen,Tanque,199,1500,2
+13,Agustina Condori,Mago,180,1400,1.8

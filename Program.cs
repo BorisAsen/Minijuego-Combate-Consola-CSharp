@@ -28,26 +28,26 @@ namespace CSharp_Combat_Minigame
                 Console.Clear();
                 Console.WriteLine("*** MINIJUEGO DE COMBATE EN CONSOLA CON C# ***");
                 Console.Write("\nSelecciona una opcion: \n");
-                Console.WriteLine("1. Iniciar un combate");
-                Console.WriteLine("2. Agregar un Personaje");
-                Console.WriteLine("3. Modificar Personajes");
-                Console.WriteLine("4. Buscar Personajes");
+                Console.WriteLine("1. Mostrar Personajes");
+                Console.WriteLine("2. Iniciar un combate");
+                Console.WriteLine("3. Agregar un Personaje");
+                Console.WriteLine("4. Modificar Personajes");
                 Console.WriteLine("5. Salir del Juego");
                 string input = Console.ReadLine();
 
                 switch (input)
                 {
                     case "1":
-                        MenuItem_Fight();
+                        MenuItem_ShowCaracters();
                         break;
                     case "2":
-                        MenuItem_AddCharacter();
+                        MenuItem_Fight();
                         break;
                     case "3":
-
+                        MenuItem_AddCharacter();
                         break;
                     case "4":
-
+                        MenuItem_UpdateCharacter();
                         break;
                     case "5":
                         exit = true;
@@ -68,18 +68,32 @@ namespace CSharp_Combat_Minigame
 
         // ************* FUNCTIONS ************* //
 
-        // Menu Item - (Fight)
-        public static void MenuItem_Fight ()
+        // Menu Item - (Show Caracters)
+        public static void MenuItem_ShowCaracters ()
         {
-            // Update characters from csv
+            // Clear Screen
+            Console.Clear();
+
+            Console.WriteLine("\nPERSONAJES DISPONIBLES:\n");
+
+            // Get updated characters from csv
             FileHelper.FromCsvToList(characters, pathCSV);
 
             // Show characters list
             ShowCharacters(characters);
 
-            // Chose a character
-            Console.WriteLine("PRESIONA UNA TECLA PARA SELECCIONAR UN PERSONAJE");
+            // Go back to menu
+            Console.WriteLine("PRESIONA UNA TECLA PARA VOLVER AL MENU");
             Console.ReadKey();
+        }
+
+        // Menu Item - (Fight)
+        public static void MenuItem_Fight ()
+        {
+            // Clear Screen
+            Console.Clear();
+
+            // Chose a character
             Console.Clear();
             Console.Write("Ingresa el id del personaje elegido para pelear: ");
             int chosenCharacterId = int.Parse(Console.ReadLine());
@@ -90,7 +104,7 @@ namespace CSharp_Combat_Minigame
             Character character2 = FindCharacterById(characters, randId);
 
             // Show versus animation
-            Animations.Versus(character1, character2);
+            Animations.Versus(character1, character2); 
 
             // Fight
             Character winner = Fight(character1, character2);
@@ -164,7 +178,86 @@ namespace CSharp_Combat_Minigame
             }
 
             // Go back to menu
-            Console.WriteLine("PRESIONA UNA TECLA PARA VOLVER AL MENU");
+            Console.WriteLine("\nPRESIONA UNA TECLA PARA VOLVER AL MENU");
+            Console.ReadKey();
+        }
+
+        // Menu Item - (Update Character)
+        public static void MenuItem_UpdateCharacter ()
+        {
+            Console.Clear();
+
+            // Find the character to update
+            Console.Write("INGRESAR EL ID DEL PERSONAJE A MODIFICAR: \n");
+            int chosenCharacterId = int.Parse(Console.ReadLine());
+            Character characterToUpdate = FindCharacterById(characters, chosenCharacterId);
+            characterToUpdate.ShowCharacter();
+
+            // Get new values for the character
+            Console.WriteLine("INGRESA LOS NUEVOS VALORES PARA EL PERSONAJE: \n");
+            Console.Write("Nombre: ");
+            string fullName = Console.ReadLine();
+            Console.Write("Elige una clase (1.Mago, 2.Luchador, 3.Tanque): ");
+            string classNumber = Console.ReadLine();
+            Character.CharacterClass chClas;
+            switch (classNumber)
+            {
+                case "1":
+                    chClas = Character.CharacterClass.Mago;
+                    break;
+                case "2":
+                    chClas = Character.CharacterClass.Luchador;
+                    break;
+                case "3":
+                    chClas = Character.CharacterClass.Tanque;
+                    break;
+                default:
+                    chClas = Character.CharacterClass.Mago;
+                    break;
+            }
+            Console.Write("Ataque (0 - 200): ");
+            double attack = double.Parse(Console.ReadLine());
+            Console.Write("Vida (0 - 1500): ");
+            double life = double.Parse(Console.ReadLine());
+            Console.Write("Probabilidad de Golpe Critico (1.0 - 2.0): ");
+            double criticalHitProbability = double.Parse(Console.ReadLine());
+
+            // Set new values for the character
+            characterToUpdate.FullName = fullName;
+            characterToUpdate.ChClass = chClas;
+            characterToUpdate.Attack = attack;
+            characterToUpdate.Life = life;
+            characterToUpdate.CriticalHitProbability = criticalHitProbability;
+
+            // Show updated character
+            Console.WriteLine("\nNUEVOS DATOS:");
+            characterToUpdate.ShowCharacter();
+
+            // Save updated character in csv
+            bool exit = false;
+            while (!exit)
+            {
+                Console.WriteLine("Deseas guardar el personaje en el archivo csv? (S/N)");
+                string save = Console.ReadLine();
+                switch (save)
+                {
+                    case "S":
+                        FileHelper.SaveCharacter_Replace(characters, characterToUpdate, pathCSV);
+                        Console.WriteLine("SE GUARDO EL PERSONAJE MODIFICADO");
+                        exit = true;
+                        break;
+                    case "N":
+                        Console.WriteLine("NO SE GUARDO EL PERSONAJE MODIFICADO");
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Opcion Incorrecta, intenta nuevamente");
+                        break;
+                }
+            }
+
+            // Go back to menu
+            Console.WriteLine("\nPRESIONA UNA TECLA PARA VOLVER AL MENU");
             Console.ReadKey();
         }
 

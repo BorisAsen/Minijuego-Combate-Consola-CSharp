@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zaira\\Desktop\\BORIS\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj": {}
+    "C:\\Users\\zaira\\Desktop\\BORIS\\FACULTAD\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zaira\\Desktop\\BORIS\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj": {
+    "C:\\Users\\zaira\\Desktop\\BORIS\\FACULTAD\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zaira\\Desktop\\BORIS\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\zaira\\Desktop\\BORIS\\FACULTAD\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj",
         "projectName": "Minijuego-Combate-Consola-CSharp",
-        "projectPath": "C:\\Users\\zaira\\Desktop\\BORIS\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj",
+        "projectPath": "C:\\Users\\zaira\\Desktop\\BORIS\\FACULTAD\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\Minijuego-Combate-Consola-CSharp.csproj",
         "packagesPath": "C:\\Users\\zaira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zaira\\Desktop\\BORIS\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\obj\\",
+        "outputPath": "C:\\Users\\zaira\\Desktop\\BORIS\\FACULTAD\\Taller 1\\Practica Final\\Minijuego Combate C#\\Minijuego-Combate-Consola-CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zaira\\AppData\\Roaming\\NuGet\\NuGet.Config"
